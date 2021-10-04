@@ -10,14 +10,13 @@ object CardProgram extends App {
 
   // Create an array, and add cards into the array
   var a1 = Array[Card](c1,c2,c3,c4,c5,c6)
-  a1.foreach(card => println( card.toString))
+  var x = 0
 
-  // The instructions tell me to take an array and filter it
-    // Is it even possible to filter an array of objects in scala?
-
-  val a2 = a1.contains("Heart")
-  println(a2)
-
+  for(x <- 1 to 6) {
+    if (a1(x-1).get_name == "Heart") {
+      println("Card: " + a1(x-1).get_num + " " + a1(x-1).get_name)
+    }
+  }
 }
 
 class Card (suit: String, num: Int) {
